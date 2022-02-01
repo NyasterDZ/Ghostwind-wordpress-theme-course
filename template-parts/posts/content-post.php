@@ -6,7 +6,7 @@
 	</div>
 
 	<!--image-->
-	<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="background-image:url('<?php echo get_the_post_thumbnail_url()?>'); height: 75vh;"></div>
+	<div class="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded" style="background-image:url('<?php echo (has_post_thumbnail()) ? get_the_post_thumbnail_url() : get_theme_file_uri("assets/img/default_image.png") ?>'); height: 75vh;"></div>
 	
 	<!--Container-->
 	<div class="container max-w-5xl mx-auto -mt-32">
@@ -51,12 +51,12 @@
 		<div class="container w-full max-w-6xl mx-auto px-2 py-8">
 			<div class="flex flex-wrap -mx-2">
 				<?php
-				$categories = get_the_category();
 				$related_posts = new WP_Query([
 					'post_type' => 'post',
 					'posts_per_page' => 3,
 					'post__not_in' => [$post->ID],
-					'cat' => count($categories) > 0 ? $categories[0]->term_id : null
+					'category__in' => wp_get_post_categories($post->ID),
+					'orderby'        => 'rand',
 				]);
 
 				while($related_posts->have_posts()){
@@ -64,12 +64,15 @@
 				?>
 				<div class="w-full md:w-1/3 px-2 pb-12">
 					<div class="h-full bg-white rounded overflow-hidden shadow-md hover:shadow-lg relative smooth">
-						<a href="#" class="no-underline hover:no-underline">
+						<a href="<?php the_permalink()?>" class="no-underline hover:no-underline">
 								<?php
+								if (has_post_thumbnail()){
 									the_post_thumbnail('post-thumbnail', [
 										'class' => 'h-64 w-full rounded-t pb-3'
 									]);
-								?>
+								}else { ?>
+									<img src="<?php echo get_theme_file_uri("assets/img/default_image.png")?>" class="h-64 w-full rounded-t pb-3" alt="">
+								<?php } ?>
 								<div class="p-2 h-auto md:h-48">
 									<?php
 										$cat = get_the_category();
