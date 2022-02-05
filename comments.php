@@ -92,6 +92,12 @@ wp_list_comments([
 ]);
 ?>
 </ul>
+<!-- Comment pagination -->
+    <div class="text-center">
+        <?php 
+            echo paginate_comments_links(); 
+        ?>
+    </div>
 </div>
 <?php
 comment_form([

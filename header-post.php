@@ -13,22 +13,18 @@
 					👻 <span class="hidden w-0 md:w-auto md:block pl-1">Ghostwind CSS</span>
 				</a>
             </div>
-			<div class="flex pl-4 text-sm">
-				<ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
-				  <li class="mr-2">
-					<a class="inline-block py-2 px-2 text-white no-underline" href="index.html">HOME</a>
-				  </li>
-				  <li class="mr-2">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">LINK</a>
-				  </li>
-				  <li class="mr-2">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">LINK</a>
-				  </li>
-					<li class="mr-2">
-					<a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-2" href="#">LINK</a>
-				  </li>
-				</ul>
-			</div>
+			
+			<?php
+				if (has_nav_menu('menu3')){
+					wp_nav_menu([
+						'theme_location' => 'menu3',
+						'menu_class' => 'list-reset flex justify-between flex-1 md:flex-none items-center',
+						'container' => 'div',
+						'container_class' => 'flex pl-4 text-sm',
+						'fallback_cb' => false,
+					]);
+				}
+			?>
         </div>
 	</nav>
 	
