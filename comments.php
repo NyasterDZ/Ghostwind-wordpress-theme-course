@@ -134,7 +134,7 @@ comment_form([
     'class_submit' => 'px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700',
     'submit_button' => '
         <div class="flex mx-3 mt-2">
-            <input class="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700" name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />.
+            <input class="px-4 py-1 bg-gray-800 text-white rounded font-light hover:bg-gray-700" name="%1$s" type="submit" id="%2$s" value="%4$s" />.
         </div>
     ',
     'class_container' => 'mb-5 w-full bg-white p-2 pt-4 rounded shadow-lg',

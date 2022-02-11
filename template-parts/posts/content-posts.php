@@ -4,9 +4,14 @@
         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
             <!-- <img src="" class="h-64 w-full rounded-t pb-6"> -->
             <?php
-                the_post_thumbnail('post-thumbnail', [
-                    'class' => 'h-64 w-full rounded-t pb-3'
-                ]);
+                if (has_post_thumbnail()){
+                    the_post_thumbnail('post-thumbnail', [
+                        'class' => 'h-64 w-full rounded-t pb-3'
+                    ]);
+                }else { ?>
+                    <img src="<?php echo get_theme_file_uri("assets/img/default_image.png")?>" class="h-64 w-full rounded-t pb-3" alt="">
+            <?php 
+            } 
             
             $categories = get_the_category();
             foreach($categories as $category){ ?>
