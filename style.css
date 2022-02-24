@@ -348,3 +348,72 @@ Text Domain: gw
       width: 320px;
   }
 }
+
+/*-------- Search Form -----------------*/
+
+ .search-form{
+  position: relative;
+  width: 100%;
+  background: #e63bbb;
+  border-radius: .9em;
+}
+
+ .search-form input, .search-form button {
+  height: 3.5rem;
+  border: 0;
+  color: #2f2f2f;
+  font-size: 1.8rem;
+}
+
+.search-form input[type=search] {
+  outline: 0;
+  width: 100%;
+  background: #fff;
+  padding: 0 1rem;
+  border-radius: .7em;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: all .3s  cubic-bezier(0, 0, 0.43, 1.49);
+  transition-property: width, border-radius;
+  z-index: 1;
+  position: relative;
+}
+ 
+ .search-form button {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 6rem;
+  font-weight: bold;
+  background: #e63bbb;
+  border-radius:.7em;
+}
+ 
+
+ .search-form input:not(:input-placeholder) {
+  border-radius: .7em 0 0 .7em;
+  width: calc(100% - 6rem);
+}
+
+ .search-form input:not(:placeholder-shown) {
+  border-radius: .7em 0 0 .7em;
+  width: calc(100% - 6rem);
+}
+ .search-form input:not(:placeholder-shown) , .search-form  button {
+  display: block;
+}
+ .search-form input:not(:input-placeholder) , .search-form  button {
+  display: block;
+}
+
+.search-form label {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}  
