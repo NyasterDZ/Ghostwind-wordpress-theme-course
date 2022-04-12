@@ -108,7 +108,7 @@
 							}
 						?>
 						
-
+						<a href="<?php the_permalink(get_theme_mod('gw_privacy_setting')); ?>">Privacy</a>
 
 						<div class="flex w-1/2 justify-end content-center">		
 							
@@ -134,12 +134,15 @@
 				<!--Lead Card-->
 				
 				<?php
-					$lead_card = new WP_Query([
-						'post_type' => 'post',
-						'p' => 115
-					]);
-					while($lead_card->have_posts()){
-						$lead_card->the_post();
+					if(get_theme_mod('gw_lead_card_setting')){
+						$lead_card = new WP_Query([
+							'post_type' => 'post',
+							'p' => 115
+						]);
+						while($lead_card->have_posts()){
+							$lead_card->the_post();
+					
+					
 					?>	
 						<div class="flex h-full bg-white rounded overflow-hidden shadow-lg">
 							<a href="<?php the_permalink()?>" class="flex flex-wrap no-underline hover:no-underline">
@@ -181,7 +184,9 @@
 								</div>
 							</a>
 						</div>
-					<?php } ?>
+					<?php } 
+						} 
+					?>
 
 				
 				<!--/Lead Card-->

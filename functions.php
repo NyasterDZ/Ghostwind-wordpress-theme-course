@@ -11,7 +11,8 @@ require(get_theme_file_path('includes/widgets.php'));
 require(get_theme_file_path('includes/classes/walker.php'));
 require(get_theme_file_path('includes/classes/walker_comments.php'));
 require(get_theme_file_path('includes/customizer/customizer.php'));
-
+require(get_theme_file_path('includes/customizer/social_icons.php'));
+require(get_theme_file_path('includes/customizer/general_settings.php'));
   
 // Action Hooks
 add_action('wp_enqueue_scripts','gw_enqueue');
