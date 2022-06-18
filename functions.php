@@ -13,12 +13,15 @@ require(get_theme_file_path('includes/classes/walker_comments.php'));
 require(get_theme_file_path('includes/customizer/customizer.php'));
 require(get_theme_file_path('includes/customizer/social_icons.php'));
 require(get_theme_file_path('includes/customizer/general_settings.php'));
+require(get_theme_file_path('blocks/gutenberg.php'));
+
   
 // Action Hooks
 add_action('wp_enqueue_scripts','gw_enqueue');
 add_action('after_setup_theme','gw_setup_theme');
 add_action( 'widgets_init', 'gw_widgets' );
 add_action( 'customize_register', 'gw_customize_register' );
+add_action('init','gw_gutenberg_blocks');
 
 //Filter hooks
 add_filter( 'nav_menu_css_class' , 'gw_change_menu_class_li' , 10, 3 );

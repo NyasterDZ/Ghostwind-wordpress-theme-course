@@ -1,0 +1,17 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "gw/atm-block",
+	"version": "0.1.0",
+	"title": "Atm Block",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Algerian Tech Makers Wordpress Block",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "atm-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
