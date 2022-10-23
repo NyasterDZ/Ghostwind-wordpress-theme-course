@@ -34,46 +34,21 @@ registerBlockType( metadata.name, {
 	icon: metadata.icon,
 
 	category: metadata.category,
-
 	attributes: {
-		title: {
-			type: 'string',
-			default: 'Algerian Tech Makers',
+		location: {
+			type: "string",
+			default: "Choose a location"
 		},
-		description: {
-			type: 'string',
-			default: 'Algerian Tech Makers is a computer company that specializes in the development of software and hardware. We are a team of dedicated and talented people who are passionate about technology and the development of new products.',
-		},
-		slug: {
-			type: 'string',
-			default: '@algeriantechmakersdz2021',
-		},
-		followers: {
-			type: 'string',
-			default: '23730',
-		},
-		following: {
-			type: 'string',
-			default: '1',
-		},
-		picProfile: {
-			type: 'string',
-			default: 'https://i.ibb.co/Hh1M0Tn/241102056-107805911635346-6817508508462524214-n.jpg',
-		},
-		picCover: {
-			type: 'string',
-			default: 'https://i.ibb.co/QQwc5rL/241092875-107806334968637-7676942246446422452-n.jpg',
-		},
-		link: {
-			type: 'string',
-			default: 'https://www.facebook.com/Algeriantechmakersdz2021/',
+		temp: {
+			type: "string",
+			default: "0°"
 		}
 	},
-
 	/**
 	 * @see ./edit.js
 	 */
 	edit: Edit,
+
 	/**
 	 * @see ./save.js
 	 */

@@ -584,3 +584,105 @@ Text Domain: gw
    padding: 0 2rem 2.5rem;
    order: 100;
  }
+
+ /*---------------- Weather Block ---------------*/
+.container-weather{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-weather .card {
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 5px 30px;
+    width: 290px;
+    height: auto;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
+}
+
+.temp__sky {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.temp__sky h1 {
+    color: #666;
+    font-weight: 300;
+    font-size: 3.59375em;
+    line-height: .2em;
+}
+
+
+.sky {
+    position: relative;
+    top: -50px;
+    margin-top: 108px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #03A9F4;
+    animation: up 2s cubic-bezier(.39, 0, .38, 1) .2s;
+}
+
+.sun {
+    position: relative;
+    top: -3px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #FFEB3B;
+    animation: up 2s cubic-bezier(.39, 0, .38, 1) .5s;
+}
+
+.cloud {
+    position: absolute;
+    top: 60px;
+    left: 30px;
+    animation: up 2s cubic-bezier(.39, 0, .38, 1) .7s;
+}
+
+.cloud:before,
+.cloud:after {
+    position: absolute;
+    display: block;
+    content: "";
+}
+
+.cloud:before {
+    margin-left: -10px;
+    width: 51px;
+    height: 18px;
+    background: #fff;
+}
+
+.cloud:after {
+    position: absolute;
+    top: -10px;
+    left: -22px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 50px -6px 0 6px #fff, 25px -19px 0 10px #fff;
+}
+
+@keyframes up {
+    0% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    50% {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    99% {
+        animation-play-state: paused;
+    }
+    100% {
+        opacity: 1;
+    }
+}

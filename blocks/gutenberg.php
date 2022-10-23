@@ -28,4 +28,22 @@ function gw_gutenberg_blocks(){
           'editor_style'  => 'gw-atm-block-style'
      ]);
 
+     // Tools Block
+//     wp_register_script('gw-tools-block-script', get_theme_file_uri() . '/blocks/tools/build/index.js', []);
+//     wp_register_style('gw-tools-block-style', get_theme_file_uri() . '/blocks/tools/build/index.css', []);
+//
+//     register_block_type('gw/tools-block', [
+//          'editor_script' => 'gw-tools-block-script',
+//          'editor_style'  => 'gw-tools-block-style'
+//     ]);
+
+	//Weather block
+
+	wp_register_script('gw-weather-block-script', get_theme_file_uri() . '/blocks/weather/build/index.js', []);
+	wp_register_style('gw-weather-block-style', get_theme_file_uri() . '/blocks/weather/build/index.css', []);
+	register_block_type('gw/weather-block', [
+          'editor_script' => 'gw-weather-block-script',
+          'editor_style'  => 'gw-weather-block-style'
+     ]);
+
 }
